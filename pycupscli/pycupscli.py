@@ -62,8 +62,14 @@ def main():
 			c.acceptJobs(args.name)
 			c.enablePrinter(args.name)
 		elif args.cmd == "info":
-			jobInfo = c.getJobAttributes(args.job)
-			print(json.dumps(jobInfo))
+			info = None
+			if args.job is not None:
+				info = c.getJobAttributes(args.job)
+			elif args.name is not None:
+				info = c.getPrinterAttributes(name=args.name)
+			elif args.uri is not None:
+				info = c.getPrinterAttributes(uri=args.uri)
+			print(json.dumps(info))
 		elif args.cmd == "print":
 			options = json.loads(args.opts)
 			job = c.printFile(args.name, args.file, args.file, options)

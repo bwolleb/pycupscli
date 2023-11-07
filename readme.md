@@ -14,7 +14,7 @@ Where subcommands are:
 - cancel: cancels one or all jobs for a printer, requires `-u uri` and either `-a` or `-j jobid`
 - remove: remove a printer, requires either `-u uri` or `-p name`
 - add: add a printer, requires `-u uri`, `-p name` and `-d driver`
-- info: returns the attributes of an existing job, requires `-j jobid`
+- info: returns the attributes of an existing job or printer, requires `-j jobid` or `-p name` or `-u uri`
 - print: print a file, requires `-p name` and `-f file`, optionally `-o opts` with options seralized as a json object
 
 The output of the script is just the raw data returned by pycups, serialized as json.
