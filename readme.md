@@ -1,9 +1,9 @@
 # PyCUPS CLI
-Allows to interact with CUPS in CLI using pycups. This script outputs the data in JSON, which allows to easily parse it in scripts with `jq`. For example getting a list of installed printers and their status is as simple as: `./pycupscli printers | jq -r 'keys[] as $k | "\($k): \(.[$k]["printer-state"])"'`.
+Allows to interact with CUPS in CLI using pycups. This script outputs the data in JSON, which allows to easily parse it in scripts with `jq`. For example getting a list of installed printers and their status is as simple as: `pycupscli printers | jq -r 'keys[] as $k | "\($k): \(.[$k]["printer-state"])"'`.
 
 ## Usage
 ```
-./pycupscli [check, devices, printers, cancel, remove, add, info, print] -j jobid -p name -u uri -d driver -f file -o opts -a
+pycupscli [check, devices, printers, cancel, remove, add, info, print] -j jobid -p name -u uri -d driver -f file -o opts -a
 ```
 
 Where subcommands are:
