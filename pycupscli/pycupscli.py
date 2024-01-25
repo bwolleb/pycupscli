@@ -34,7 +34,7 @@ def main():
 	parser.add_argument("-u", help="Printer URI", required=False, default=None, dest="uri")
 	parser.add_argument("-d", help="Driver", required=False, default=None, dest="driver")
 	parser.add_argument("-f", help="File to print", required=False, default=None, dest="file")
-	parser.add_argument("-o", help="Options", required=False, default={}, dest="opts")
+	parser.add_argument("-o", help="Options", required=False, default="{}", dest="opts")
 	args = parser.parse_args()
 
 	try:
